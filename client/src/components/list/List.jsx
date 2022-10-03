@@ -6,9 +6,12 @@ import "./list.scss";
 
 export default function List() {
   const listRef = useRef();
+
+  const [isMoved, setIsMoved] = useState(false);
   const [sliderNumber, setSliderNumber] = useState(0);
 
   const handleClick = (direction) => {
+    setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x - 50;
     let size = listRef.current.children.length;
     if (direction === "left" && sliderNumber > 0) {
@@ -28,6 +31,7 @@ export default function List() {
         <HiOutlineChevronLeft
           className="sliderArrow left"
           onClick={() => handleClick("left")}
+          style={{ display: !isMoved && "none" }}
         />
         <div className="container" ref={listRef}>
           <ListItem />

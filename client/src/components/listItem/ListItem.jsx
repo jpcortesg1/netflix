@@ -1,8 +1,8 @@
-import "./listItem.scss";
 import { BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { IoIosAdd } from "react-icons/io";
 import { useState } from "react";
+import "./listItem.scss";
 
 export default function ListItem({ index }) {
   const [isHovered, setIsHovered] = useState(false);
